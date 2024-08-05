@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 
 const MapPage = () => {
   return (
-    <div className="bg-gray-100 min-h-screen p-4">
+    <div className="bg-black min-h-screen p-4 mt-16">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold mb-4">Interactive Map</h1>
         <MapContainer center={[28.6139, 77.209]} zoom={13} className="h-96">
@@ -15,7 +15,6 @@ const MapPage = () => {
           <Marker position={[28.6139, 77.209]}>
             <Popup>India Gate</Popup>
           </Marker>
-          {/* Add more markers and popups here */}
         </MapContainer>
       </div>
     </div>

@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav
+      className={`fixed top-0 left-0 w-full p-4 z-10 transition-all duration-500 ${
+        isScrolled ? "bg-black bg-opacity-100" : "bg-black bg-opacity-0"
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Link to="/" className="text-white text-lg font-bold">
-            Delhi Tourism
+            VisitDelhi
           </Link>
         </div>
         <div>

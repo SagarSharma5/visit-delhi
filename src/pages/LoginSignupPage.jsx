@@ -51,8 +51,8 @@ const LoginSignupPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-4 bg-white rounded-lg shadow-md">
+    <div className="flex justify-center items-center h-screen bg-black text-black">
+      <div className="w-full max-w-md p-8 space-y-4 bg-slate-300 rounded-lg shadow-md">
         <CSSTransition
           in={isLogin}
           timeout={300}
