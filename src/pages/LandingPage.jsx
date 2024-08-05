@@ -23,8 +23,27 @@ const LandingPage = () => {
 
       <div className="container mx-auto p-4 bg-black mt-10">
         <section className="my-8 text-center">
-          <h1 className="text-5xl font-bold mb-4 text-white">About Delhi</h1>
-          <p className="text-gray-300 mb-4">Brief description about Delhi...</p>
+          <h1 className="text-5xl font-bold mb-4 text-white mb-6">
+            About Delhi
+          </h1>
+          <p className="text-gray-300 mb-10">
+            Delhi, the capital city of India, is a vibrant metropolis that
+            beautifully blends history and modernity. Known for its rich
+            heritage, Delhi is home to iconic landmarks such as the Red Fort,
+            India Gate,
+            <br /> and the Qutub Minar, each telling a story of its glorious
+            past. The city’s diverse culture is reflected in its culinary
+            delights, bustling markets, and colorful festivals. As one of the
+            largest cities in India, Delhi serves as a political, economic, and
+            cultural hub. Its neighborhoods range from the historic lanes of Old
+            Delhi, famous for their street food and traditional bazaars, to the
+            modern architecture of New Delhi, which showcases the city’s growth
+            and development. Delhi's extensive public transport system,
+            including the Delhi Metro, makes it easy to explore its many
+            attractions. Whether you're visiting historical sites, enjoying the
+            local cuisine, or experiencing the vibrant arts scene, Delhi offers
+            something for everyone, making it a must-visit destination in India.
+          </p>
         </section>
 
         {/* Card Section */}
