@@ -29,7 +29,7 @@ const LandingPage = () => {
         </div>
       </header>
 
-      <div className="container mx-auto p-4 bg-black mt-10">
+      <div className="container mx-auto p-4 bg-black mt-64">
         <section className="my-8 text-center">
           <h1 className="text-5xl font-bold text-white mb-6">About Delhi</h1>
           <p className="text-gray-300 mb-10">
@@ -103,19 +103,31 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <section className="my-8 text-center mt-36">
-          <h2 className="text-3xl font-bold mb-4 text-white">
-            Interactive Map
+        <section className="my-8  mt-64 flex flex-row items-center justify-center gap-x-20">
+          <h2 className="text-6xl font-bold mb-4 text-white text-center">
+            Interactive <br />
+            Map
           </h2>
-          <p className="text-gray-300 mb-4">
-            Explore Delhi through our interactive map...
-          </p>
-          <Link to="/map" className="text-blue-500 hover:underline">
-            Explore the map
-          </Link>
+          <div className="flex">
+            <Link
+              to="/map"
+              className=" max-h-500px relative rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
+            >
+              <img
+                src="/delhimap.png"
+                alt="Explore Map"
+                className="h-[500px] w-[500px] object-contain"
+              />
+              <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
+                <h3 className="text-2xl font-semibold text-white">
+                  Explore the map
+                </h3>
+              </div>
+            </Link>
+          </div>
         </section>
 
-        <section className="my-8 text-center">
+        <section className="my-8 text-center mt-64">
           <h2 className="text-3xl font-bold mb-4 text-white">
             Travel Itineraries
           </h2>
