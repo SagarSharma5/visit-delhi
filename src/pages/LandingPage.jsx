@@ -108,7 +108,7 @@ const LandingPage = () => {
 
         <section className="my-8 mt-64 flex flex-col lg:flex-row items-center justify-center">
           <h2 className="text-6xl font-bold mb-4 text-white text-center lg:text-left lg:mr-10">
-            Interactive <br className="text-center" />
+            Interactive <br />
             Map
           </h2>
           <Link

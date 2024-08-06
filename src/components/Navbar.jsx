@@ -28,8 +28,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <div>
-          <Link to="/" className="text-white text-lg font-bold">
-            VisitDelhi
+          <Link to="/" className="text-white text-2xl font-bold">
+            visitDelhi
           </Link>
         </div>
         <div>
