@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const LandingPage = () => {
   return (
     <div className="bg-black min-h-screen">
       <header
-        className="h-[900px] relative z-0"
+        className="h-[910px] relative z-0"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,1) 100%), url(/indiagate2.jpg)",
+            "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,1) 100%), url(/indiagate2.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -18,14 +19,16 @@ const LandingPage = () => {
           <h1 className="text-9xl tracking-wider font-heroFont text-white mt-[500px] ml-[170px] font-bold">
             DELHI
           </h1>
-          <div className="flex justify-center items-center rounded-lg border-blue-600 border-2 h-22 w-60 ml-[170px] mt-10">
-            <button className="relative h-16 w-full text-2xl font-heroFont rounded-md overflow-hidden group">
-              <span className="absolute inset-0 bg-blue-600 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></span>
-              <span className="relative z-10 text-white  flex justify-center items-center h-full w-full">
-                Explore
-              </span>
-            </button>
-          </div>
+
+          <Link
+            to="/about"
+            className="relative h-16 w-36 text-2xl font-heroFont rounded-md flex items-center justify-center group ml-44"
+          >
+            <span className="relative text-white flex items-center group-hover:scale-105 transition-transform duration-300 font-extralight tracking-widest">
+              Explore
+              <FaLongArrowAltRight className="ml-2 mt-2 text-white text-2xl" />
+            </span>
+          </Link>
         </div>
       </header>
 
@@ -38,7 +41,7 @@ const LandingPage = () => {
             heritage, Delhi is home to iconic landmarks such as the Red Fort,
             India Gate,
             <br /> and the Qutub Minar, each telling a story of its glorious
-            past. The city’s diverse culture is reflected in its culinary
+            past. The city's diverse culture is reflected in its culinary
             delights, bustling markets, and colorful festivals. As one of the
             largest cities in India, Delhi serves as a political, economic, and
             cultural hub. Its neighborhoods range from the historic lanes of Old
@@ -54,10 +57,10 @@ const LandingPage = () => {
 
         {/* Card Section */}
         <section className="my-8 flex flex-col items-center">
-          <div className="w-[1200px] h-[500px] flex justify-between gap-x-10 ">
+          <div className="w-full flex flex-col lg:flex-row justify-between gap-10">
             <Link
               to="/about"
-              className="relative w-1/3 rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
+              className="relative w-full lg:w-1/3 h-[500px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
             >
               <img
                 src="/delhi1.jpg"
@@ -73,7 +76,7 @@ const LandingPage = () => {
 
             <Link
               to="/about"
-              className="relative w-1/3 rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
+              className="relative w-full lg:w-1/3 h-[500px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
             >
               <img
                 src="/delhi2.jpg"
@@ -87,7 +90,7 @@ const LandingPage = () => {
 
             <Link
               to="/about"
-              className="relative w-1/3 rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
+              className="relative w-full lg:w-1/3 h-[500px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
             >
               <img
                 src="/delhi3.jpg"
@@ -103,40 +106,44 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <section className="my-8  mt-64 flex flex-row items-center justify-center gap-x-20">
-          <h2 className="text-6xl font-bold mb-4 text-white text-center">
-            Interactive <br />
+        <section className="my-8 mt-64 flex flex-col lg:flex-row items-center justify-center">
+          <h2 className="text-6xl font-bold mb-4 text-white text-center lg:text-left lg:mr-10">
+            Interactive <br className="text-center" />
             Map
           </h2>
-          <div className="flex">
-            <Link
-              to="/map"
-              className=" max-h-500px relative rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
-            >
-              <img
-                src="/delhimap.png"
-                alt="Explore Map"
-                className="h-[500px] w-[500px] object-contain"
-              />
-              <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                <h3 className="text-2xl font-semibold text-white">
-                  Explore the map
-                </h3>
-              </div>
-            </Link>
-          </div>
+          <Link
+            to="/map"
+            className="relative w-full lg:w-2/3 h-[500px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
+          >
+            <img
+              src="/delhimap.png"
+              alt="Explore Map"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
+              <h3 className="text-2xl font-semibold text-white">
+                Explore the map
+              </h3>
+            </div>
+          </Link>
         </section>
 
-        <section className="my-8 text-center mt-64">
-          <h2 className="text-3xl font-bold mb-4 text-white">
-            Travel Itineraries
-          </h2>
-          <p className="text-gray-300 mb-4">
-            Create and manage your travel itineraries...
-          </p>
-          <Link to="/itinerary" className="text-blue-500 hover:underline">
-            Create an itinerary
-          </Link>
+        <section className="relative w-full h-[90vh] bg-black mt-64 flex items-end justify-end pb-2">
+          <video
+            className="absolute inset-0 w-full h-full object-cover opacity-75"
+            src="https://videos.pexels.com/video-files/5966355/5966355-uhd_2732_1440_25fps.mp4"
+            autoPlay
+            loop
+            muted
+          ></video>
+          <div className="relative z-10 w-full max-w-[400px] h-36">
+            <Link
+              to="/itinerary"
+              className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-white bg-transparent border border-white rounded-sm hover:bg-gray-100 hover:text-black hover:shadow-lg transition duration-300"
+            >
+              Create an Itinerary
+            </Link>
+          </div>
         </section>
       </div>
     </div>
