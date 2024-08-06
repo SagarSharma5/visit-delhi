@@ -8,24 +8,30 @@ const LandingPage = () => {
         className="h-[900px] relative z-0"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,1) 100%), url(/indiagate.jpg)",
+            "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,1) 100%), url(/indiagate2.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="flex justify-center items-center h-full">
-          <h1 className="text-9xl tracking-[.3em] text-white font-bold">
+        <div className="flex h-full flex-col">
+          <h1 className="text-9xl tracking-wider font-heroFont text-white mt-[500px] ml-[170px] font-bold">
             DELHI
           </h1>
+          <div className="flex justify-center items-center rounded-lg border-blue-600 border-2 h-22 w-60 ml-[170px] mt-10">
+            <button className="relative h-16 w-full text-2xl font-heroFont rounded-md overflow-hidden group">
+              <span className="absolute inset-0 bg-blue-600 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></span>
+              <span className="relative z-10 text-white  flex justify-center items-center h-full w-full">
+                Explore
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 
       <div className="container mx-auto p-4 bg-black mt-10">
         <section className="my-8 text-center">
-          <h1 className="text-5xl font-bold mb-4 text-white mb-6">
-            About Delhi
-          </h1>
+          <h1 className="text-5xl font-bold text-white mb-6">About Delhi</h1>
           <p className="text-gray-300 mb-10">
             Delhi, the capital city of India, is a vibrant metropolis that
             beautifully blends history and modernity. Known for its rich
