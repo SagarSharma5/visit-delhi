@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import "./LandingPage.css";
 
 const LandingPage = () => {
   return (
     <div className="bg-black min-h-screen">
       <header
-        className="h-[910px] relative z-0"
+        className="h-[100vh] relative z-0"
         style={{
           backgroundImage:
             "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,1) 100%), url(/indiagate2.jpg)",
@@ -23,6 +24,7 @@ const LandingPage = () => {
           <Link
             to="/about"
             className="relative h-16 w-36 text-2xl font-heroFont rounded-md flex items-center justify-center group ml-44"
+            style={{ textDecoration: "none" }}
           >
             <span className="relative text-white flex items-center group-hover:scale-105 transition-transform duration-300 font-extralight tracking-widest">
               Explore
@@ -60,10 +62,10 @@ const LandingPage = () => {
           <div className="w-full flex flex-col lg:flex-row justify-between gap-10">
             <Link
               to="/about"
-              className="relative w-full lg:w-1/3 h-[500px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
+              className="relative w-full lg:w-1/3 h-[400px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
             >
               <img
-                src="/delhi1.jpg"
+                src="https://images.pexels.com/photos/19883677/pexels-photo-19883677/free-photo-of-building-at-lodhi-garden-in-new-delhi.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Description 1"
                 className="w-full h-full object-cover"
               />
@@ -76,7 +78,7 @@ const LandingPage = () => {
 
             <Link
               to="/about"
-              className="relative w-full lg:w-1/3 h-[500px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
+              className="relative w-full lg:w-1/3 h-[400px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
             >
               <img
                 src="/delhi2.jpg"
@@ -90,7 +92,7 @@ const LandingPage = () => {
 
             <Link
               to="/about"
-              className="relative w-full lg:w-1/3 h-[500px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
+              className="relative w-full lg:w-1/3 h-[400px] rounded-lg overflow-hidden shadow-lg hover:scale-[105%] transition-all ease-in-out duration-300 cursor-pointer"
             >
               <img
                 src="/delhi3.jpg"
@@ -128,7 +130,7 @@ const LandingPage = () => {
           </Link>
         </section>
 
-        <section className="relative w-full h-[90vh] bg-black mt-64 flex items-end justify-end pb-2">
+        <section className="relative w-full h-[80vh] bg-black mt-64 flex items-end justify-end pb-2">
           <video
             className="absolute inset-0 w-full h-full object-cover opacity-75"
             src="https://videos.pexels.com/video-files/5966355/5966355-uhd_2732_1440_25fps.mp4"
@@ -139,7 +141,8 @@ const LandingPage = () => {
           <div className="relative z-10 w-full max-w-[400px] h-36">
             <Link
               to="/itinerary"
-              className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-white bg-transparent border border-white rounded-sm hover:bg-gray-100 hover:text-black hover:shadow-lg transition duration-300"
+              className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-white bg-transparent border border-white rounded-sm transition duration-300 custom-hover"
+              style={{ textDecoration: "none" }}
             >
               Create an Itinerary
             </Link>

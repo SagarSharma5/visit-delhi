@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<User>
+  <Name>John Doe</Name>
+  <Email>johndoe@example.com</Email>
+  <Age>18</Age>
+  <Address>
+    <Street>123 Elm Street</Street>
+    <City>Springfield</City>
+    <State>IL</State>
+    <ZipCode>62704</ZipCode>
+  </Address>
+  <Itineraries>
+    <Itinerary>
+      <Destination>Paris</Destination>
+      <Date>2024-05-01</Date>
+    </Itinerary>
+    <Itinerary>
+      <Destination>Tokyo</Destination>
+      <Date>2024-09-15</Date>
+    </Itinerary>
+  </Itineraries>
+</User>

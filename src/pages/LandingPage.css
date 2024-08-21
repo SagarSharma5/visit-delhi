@@ -1,0 +1,6 @@
+.custom-hover:hover {
+    background-color: #d1d1d1; /* Change to your desired hover background color */
+    color: #000000; /* Change to your desired hover text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Change to your desired hover shadow effect */
+  }
+  

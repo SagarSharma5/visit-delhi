@@ -14,7 +14,7 @@ const ItineraryPage = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen p-4 mt-16">
+    <div className="bg-black min-h-[85.6vh] p-4 mt-16">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold mb-4">Itinerary Planner</h1>
         <div className="mb-4">

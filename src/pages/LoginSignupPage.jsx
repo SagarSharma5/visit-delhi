@@ -51,7 +51,7 @@ const LoginSignupPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-black text-black">
+    <div className="flex justify-center items-center h-[92.4vh] bg-black text-black">
       <div className="w-full max-w-md p-8 space-y-4 bg-slate-300 rounded-lg shadow-md">
         <CSSTransition
           in={isLogin}

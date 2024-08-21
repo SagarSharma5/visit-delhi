@@ -9,12 +9,14 @@ import ItineraryPage from "./pages/ItineraryPage";
 import ProfilePage from "./pages/ProfilePage";
 import LoginSignupPage from "./pages/LoginSignupPage";
 
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 const App = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-black text-white">
         <Navbar />
-        <main className="flex-grow min-h-[calc(100vh-8rem)]">
+        <main className="">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
