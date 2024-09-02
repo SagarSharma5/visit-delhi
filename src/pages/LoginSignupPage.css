@@ -17,3 +17,15 @@
     transition: opacity 300ms, transform 300ms;
   }
   
+  .border-red-500 {
+    border-color: red;
+  }
+  
+  .border-green-500 {
+    border-color: green;
+  }
+  
+  .border-gray-300 {
+    border-color: gray;
+  }
+  

@@ -22,7 +22,7 @@ const ItineraryPage = () => {
             type="text"
             value={newItem}
             onChange={(e) => setNewItem(e.target.value)}
-            className="border p-2 mr-2"
+            className="border p-2 mr-2 text-black"
           />
           <button onClick={addItem} className="bg-blue-500 text-white p-2">
             Add

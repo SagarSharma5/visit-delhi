@@ -10,6 +10,8 @@ const LoginSignupPage = () => {
     email: "",
     username: "",
     password: "",
+    confirmPassword: "",
+    dateOfBirth: "",
   });
   const [errors, setErrors] = useState({});
 
@@ -29,15 +31,57 @@ const LoginSignupPage = () => {
 
   const validate = () => {
     let tempErrors = {};
+
     if (isLogin) {
       if (!loginForm.username) tempErrors.username = "Username is required.";
       if (!loginForm.password) tempErrors.password = "Password is required.";
     } else {
-      if (!signupForm.name) tempErrors.name = "Name is required.";
-      if (!signupForm.email) tempErrors.email = "Email is required.";
+      if (!signupForm.name || !/^[A-Za-z\s]{3,}$/.test(signupForm.name)) {
+        tempErrors.name = "Name must contain at least 3 alphabetic characters.";
+      }
+      if (
+        !signupForm.email ||
+        !/^[\w-]+(\.[\w-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/.test(
+          signupForm.email
+        )
+      ) {
+        tempErrors.email = "Invalid email format.";
+      }
       if (!signupForm.username) tempErrors.username = "Username is required.";
-      if (!signupForm.password) tempErrors.password = "Password is required.";
+      if (
+        !signupForm.password ||
+        signupForm.password.length < 8 ||
+        !/\d/.test(signupForm.password) ||
+        !/[A-Za-z]/.test(signupForm.password)
+      ) {
+        tempErrors.password =
+          "Password must be at least 8 characters long and contain both letters and numbers.";
+      }
+      if (signupForm.password !== signupForm.confirmPassword) {
+        tempErrors.confirmPassword = "Passwords do not match.";
+      }
+      if (
+        !signupForm.dateOfBirth ||
+        !/^(\d{4})-(\d{2})-(\d{2})$/.test(signupForm.dateOfBirth)
+      ) {
+        tempErrors.dateOfBirth = "Date of birth must be in YYYY-MM-DD format.";
+      } else {
+        const today = new Date();
+        const birthDate = new Date(signupForm.dateOfBirth);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDifference = today.getMonth() - birthDate.getMonth();
+        if (
+          monthDifference < 0 ||
+          (monthDifference === 0 && today.getDate() < birthDate.getDate())
+        ) {
+          age--;
+        }
+        if (age < 18) {
+          tempErrors.dateOfBirth = "You must be at least 18 years old.";
+        }
+      }
     }
+
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
@@ -46,8 +90,15 @@ const LoginSignupPage = () => {
     e.preventDefault();
     if (validate()) {
       // Handle form submission logic
+      alert("Form submitted successfully!");
       console.log(isLogin ? loginForm : signupForm);
     }
+  };
+
+  const inputClassName = (field) => {
+    if (errors[field]) return "border-red-500"; // Red border if there's an error
+    if (signupForm[field] && !errors[field]) return "border-green-500"; // Green border if there's no error and the field is filled
+    return "border-gray-300"; // Default border color
   };
 
   return (
@@ -69,7 +120,9 @@ const LoginSignupPage = () => {
                   name="username"
                   value={loginForm.username}
                   onChange={(e) => handleChange(e, "login")}
-                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${inputClassName(
+                    "username"
+                  )}`}
                 />
                 {errors.username && (
                   <p className="text-red-500 text-xs">{errors.username}</p>
@@ -82,7 +135,9 @@ const LoginSignupPage = () => {
                   name="password"
                   value={loginForm.password}
                   onChange={(e) => handleChange(e, "login")}
-                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${inputClassName(
+                    "password"
+                  )}`}
                 />
                 {errors.password && (
                   <p className="text-red-500 text-xs">{errors.password}</p>
@@ -111,7 +166,9 @@ const LoginSignupPage = () => {
                   name="name"
                   value={signupForm.name}
                   onChange={(e) => handleChange(e, "signup")}
-                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${inputClassName(
+                    "name"
+                  )}`}
                 />
                 {errors.name && (
                   <p className="text-red-500 text-xs">{errors.name}</p>
@@ -124,7 +181,9 @@ const LoginSignupPage = () => {
                   name="email"
                   value={signupForm.email}
                   onChange={(e) => handleChange(e, "signup")}
-                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${inputClassName(
+                    "email"
+                  )}`}
                 />
                 {errors.email && (
                   <p className="text-red-500 text-xs">{errors.email}</p>
@@ -137,7 +196,9 @@ const LoginSignupPage = () => {
                   name="username"
                   value={signupForm.username}
                   onChange={(e) => handleChange(e, "signup")}
-                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${inputClassName(
+                    "username"
+                  )}`}
                 />
                 {errors.username && (
                   <p className="text-red-500 text-xs">{errors.username}</p>
@@ -150,10 +211,44 @@ const LoginSignupPage = () => {
                   name="password"
                   value={signupForm.password}
                   onChange={(e) => handleChange(e, "signup")}
-                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${inputClassName(
+                    "password"
+                  )}`}
                 />
                 {errors.password && (
                   <p className="text-red-500 text-xs">{errors.password}</p>
+                )}
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Confirm Password</label>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  value={signupForm.confirmPassword}
+                  onChange={(e) => handleChange(e, "signup")}
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${inputClassName(
+                    "confirmPassword"
+                  )}`}
+                />
+                {errors.confirmPassword && (
+                  <p className="text-red-500 text-xs">
+                    {errors.confirmPassword}
+                  </p>
+                )}
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Date of Birth</label>
+                <input
+                  type="date"
+                  name="dateOfBirth"
+                  value={signupForm.dateOfBirth}
+                  onChange={(e) => handleChange(e, "signup")}
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${inputClassName(
+                    "dateOfBirth"
+                  )}`}
+                />
+                {errors.dateOfBirth && (
+                  <p className="text-red-500 text-xs">{errors.dateOfBirth}</p>
                 )}
               </div>
               <button className="w-full bg-blue-500 text-white py-2 rounded-lg">
